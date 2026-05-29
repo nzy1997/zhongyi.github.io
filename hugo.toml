@@ -1,0 +1,72 @@
+baseURL = "https://example.org/"
+title = "Academic Homepage"
+theme = "LoveIt"
+languageCode = "en"
+defaultContentLanguage = "en"
+hasCJKLanguage = false
+enableRobotsTXT = true
+enableEmoji = true
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  defaultTheme = "auto"
+  dateFormat = "2006-01-02"
+  title = "Academic Homepage"
+  description = "Personal academic website built with Hugo and LoveIt."
+
+  [params.author]
+    name = ""
+    email = ""
+    link = ""
+
+  [params.header]
+    desktopMode = "fixed"
+    mobileMode = "auto"
+
+    [params.header.title]
+      name = "Academic Homepage"
+      pre = ""
+      post = ""
+      typeit = false
+
+  [params.footer]
+    enable = true
+    hugo = true
+    copyright = true
+    author = true
+
+  [params.home]
+    rss = 10
+
+    [params.home.profile]
+      enable = true
+      avatarURL = ""
+      title = ""
+      subtitle = ""
+      typeit = false
+      social = true
+      disclaimer = ""
+
+    [params.home.posts]
+      enable = true
+      paginate = 6
+
+  [params.social]
+    GitHub = ""
+    Email = ""
+    Googlescholar = ""
+    Researchgate = ""
+    ORCID = ""
+    RSS = true
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 1
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
