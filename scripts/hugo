@@ -3,6 +3,8 @@
 set -eu
 
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+REPO_ROOT=$(CDPATH= cd -- "${SCRIPT_DIR}/.." && pwd)
 HUGO_BIN=$("${SCRIPT_DIR}/bootstrap-hugo")
 
+cd "${REPO_ROOT}"
 exec "${HUGO_BIN}" "$@"
