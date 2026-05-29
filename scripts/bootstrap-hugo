@@ -1,0 +1,39 @@
+#!/bin/sh
+
+set -eu
+
+VERSION="0.145.0"
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+REPO_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+
+OS=$(uname -s)
+ARCH=$(uname -m)
+
+case "${OS}-${ARCH}" in
+  Darwin-arm64|Darwin-x86_64)
+    PACKAGE_SUFFIX="darwin-universal"
+    ;;
+  *)
+    echo "unsupported platform: ${OS}-${ARCH}" >&2
+    exit 1
+    ;;
+esac
+
+TOOLS_DIR="${REPO_ROOT}/.tools"
+INSTALL_DIR="${TOOLS_DIR}/hugo-extended-${VERSION}"
+HUGO_BIN="${INSTALL_DIR}/hugo"
+ARCHIVE_NAME="hugo_extended_${VERSION}_${PACKAGE_SUFFIX}.tar.gz"
+DOWNLOAD_URL="https://github.com/gohugoio/hugo/releases/download/v${VERSION}/${ARCHIVE_NAME}"
+
+if [ ! -x "${HUGO_BIN}" ]; then
+  mkdir -p "${TOOLS_DIR}" "${INSTALL_DIR}"
+  TMP_DIR=$(mktemp -d "${TOOLS_DIR}/hugo-bootstrap.XXXXXX")
+  trap 'rm -rf "${TMP_DIR}"' EXIT INT TERM HUP
+
+  ARCHIVE_PATH="${TMP_DIR}/${ARCHIVE_NAME}"
+  curl --fail --location --retry 3 --retry-delay 1 --output "${ARCHIVE_PATH}" "${DOWNLOAD_URL}"
+  tar -xzf "${ARCHIVE_PATH}" -C "${INSTALL_DIR}"
+fi
+
+printf '%s\n' "${HUGO_BIN}"
