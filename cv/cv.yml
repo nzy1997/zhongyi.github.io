@@ -6,7 +6,7 @@ personal:
   phone: "+86 131-2271-2162"
   url:
   titles:
-    - PhD Student in Physics
+    - PhD Student in Advanced Materials
   location:
     city: Guangzhou
     region:
@@ -17,18 +17,21 @@ personal:
       url: https://github.com/nzy1997
 
 homepage:
-  heroSummary: Research in quantum error correction, tensor-network methods, and quantum computing.
+  heroSummary: Research in quantum error correction, tensor-network methods, and numerical methods for quantum computing.
   keywords:
     - Quantum error correction
     - Tensor networks
-    - Variational quantum algorithms
-    - Quantum control
+    - Numerical methods
+  softwareExtras:
+    - name: QuantumClifford.jl
+      url: https://github.com/QuantumSavory/QuantumClifford.jl
+      meta: Contributor
+      description: Open-source contributions to a Julia toolkit for quantum circuit and stabilizer simulation.
 
 researchInterests:
   - Quantum error correction
   - Tensor networks
-  - Variational quantum algorithms
-  - Quantum control
+  - Numerical methods
 
 education:
   - institution: The Hong Kong University of Science and Technology (Guangzhou)
@@ -99,6 +102,8 @@ projects:
   - name: TensorQEC.jl
     url: https://github.com/nzy1997/TensorQEC.jl
     affiliation: Research Software
+    homepageSection: software
+    homepageMeta: Maintainer
     startDate: 2024-01-01
     endDate: present
     highlights:
@@ -106,6 +111,8 @@ projects:
   - name: Tensor Network for Quantum Error Correction
     url: https://www.youtube.com/watch?v=v0RPD4eSzVE
     affiliation: JuliaCon talk
+    homepageSection: talks
+    homepageMeta: JuliaCon 2025
     startDate: 2025-07-01
     endDate: 2025-07-01
     highlights:

@@ -4,10 +4,11 @@
 {{ else }}
   {{ errorf "Unable to read cv/cv.yml" }}
 {{ end }}
-{{ $home := .Site.Data.homepage }}
 {{ $github := "" }}
 {{ $affiliation := "" }}
 {{ $location := "" }}
+{{ $softwareProjects := where $cv.projects "homepageSection" "software" }}
+{{ $talkProjects := where $cv.projects "homepageSection" "talks" }}
 {{ with index $cv.personal.profiles 0 }}
   {{ $github = .url }}
 {{ end }}
@@ -64,23 +65,40 @@
   </ol>
 </section>
 
-<section class="academic-section" id="software-talks">
-  <h2>Software &amp; Talks</h2>
+<section class="academic-section" id="software">
+  <h2>Software</h2>
   <ol class="academic-list academic-list--numbered">
-    {{ range $cv.projects }}
+    {{ range $softwareProjects }}
       <li class="academic-list__item">
         <h3><a href="{{ .url }}" rel="noopener noreferrer" target="_blank">{{ .name }}</a></h3>
-        <p class="academic-list__meta">{{ .affiliation }}</p>
+        <p class="academic-list__meta">{{ .homepageMeta }}</p>
         {{ with .highlights }}
           <p>{{ index . 0 }}</p>
         {{ end }}
       </li>
     {{ end }}
-    <li class="academic-list__item">
-      <h3><a href="https://github.com/QuantumSavory/QuantumClifford.jl" rel="noopener noreferrer" target="_blank">QuantumClifford.jl</a></h3>
-      <p class="academic-list__meta">Contributor</p>
-      <p>Open-source contributions to a Julia toolkit for quantum circuit and stabilizer simulation.</p>
-    </li>
+    {{ range $cv.homepage.softwareExtras }}
+      <li class="academic-list__item">
+        <h3><a href="{{ .url }}" rel="noopener noreferrer" target="_blank">{{ .name }}</a></h3>
+        <p class="academic-list__meta">{{ .meta }}</p>
+        <p>{{ .description }}</p>
+      </li>
+    {{ end }}
+  </ol>
+</section>
+
+<section class="academic-section" id="talks">
+  <h2>Talks</h2>
+  <ol class="academic-list academic-list--numbered">
+    {{ range $talkProjects }}
+      <li class="academic-list__item">
+        <h3><a href="{{ .url }}" rel="noopener noreferrer" target="_blank">{{ .name }}</a></h3>
+        <p class="academic-list__meta">{{ .homepageMeta }}</p>
+        {{ with .highlights }}
+          <p>{{ index . 0 }}</p>
+        {{ end }}
+      </li>
+    {{ end }}
   </ol>
 </section>
 
