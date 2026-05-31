@@ -1,5 +1,5 @@
 baseURL = "https://example.org/"
-title = "Academic Homepage"
+title = "Zhongyi Ni"
 theme = "LoveIt"
 languageCode = "en"
 defaultContentLanguage = "en"
@@ -7,14 +7,37 @@ hasCJKLanguage = false
 enableRobotsTXT = true
 enableEmoji = true
 
+[module]
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"
+  [[module.mounts]]
+    source = "cv"
+    target = "static/cv"
+
 [pagination]
   pagerSize = 10
 
 [params]
   defaultTheme = "auto"
   dateFormat = "2006-01-02"
-  title = "Academic Homepage"
-  description = "Personal academic website built with Hugo and LoveIt."
+  title = "Zhongyi Ni"
+  description = "Researcher in AI for science, quantum error correction, and computational physics."
 
   [params.author]
     name = ""
@@ -26,7 +49,7 @@ enableEmoji = true
     mobileMode = "auto"
 
     [params.header.title]
-      name = "Academic Homepage"
+      name = "Zhongyi Ni"
       pre = ""
       post = ""
       typeit = false
@@ -41,7 +64,7 @@ enableEmoji = true
     rss = 10
 
     [params.home.profile]
-      enable = true
+      enable = false
       avatarURL = ""
       title = ""
       subtitle = ""
@@ -50,7 +73,7 @@ enableEmoji = true
       disclaimer = ""
 
     [params.home.posts]
-      enable = true
+      enable = false
       paginate = 6
 
   [params.social]
@@ -63,10 +86,35 @@ enableEmoji = true
 
 [menu]
   [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    url = "/posts/"
+    identifier = "about"
+    name = "About"
+    url = "#about"
     weight = 1
+  [[menu.main]]
+    identifier = "research"
+    name = "Research"
+    url = "#research"
+    weight = 2
+  [[menu.main]]
+    identifier = "publications"
+    name = "Publications"
+    url = "#publications"
+    weight = 3
+  [[menu.main]]
+    identifier = "software-talks"
+    name = "Software & Talks"
+    url = "#software-talks"
+    weight = 4
+  [[menu.main]]
+    identifier = "experience"
+    name = "Experience"
+    url = "#experience"
+    weight = 5
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "#contact"
+    weight = 6
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
