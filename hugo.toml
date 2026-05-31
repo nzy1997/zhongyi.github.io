@@ -1,4 +1,4 @@
-baseURL = "https://example.org/"
+baseURL = "https://zhongyi.github.io/"
 title = "Zhongyi Ni"
 theme = "LoveIt"
 languageCode = "en"
@@ -40,9 +40,15 @@ enableEmoji = true
   description = "Researcher in AI for science, quantum error correction, and computational physics."
 
   [params.author]
-    name = ""
+    name = "Zhongyi Ni"
     email = ""
     link = ""
+
+  [params.app]
+    title = "Zhongyi Ni"
+    themeColor = "#ffffff"
+    iconColor = "#5bbad5"
+    tileColor = "#da532c"
 
   [params.header]
     desktopMode = "fixed"
@@ -56,9 +62,10 @@ enableEmoji = true
 
   [params.footer]
     enable = true
-    hugo = true
+    hugo = false
     copyright = true
     author = true
+    since = 2026
 
   [params.home]
     rss = 10
@@ -82,7 +89,6 @@ enableEmoji = true
     Googlescholar = ""
     Researchgate = ""
     ORCID = ""
-    RSS = true
 
 [menu]
   [[menu.main]]
@@ -117,4 +123,4 @@ enableEmoji = true
     weight = 6
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "JSON"]

@@ -1,0 +1,148 @@
+{{ $cv := dict }}
+{{ with os.ReadFile "cv/cv.yml" }}
+  {{ $cv = . | transform.Unmarshal (dict "format" "yaml") }}
+{{ else }}
+  {{ errorf "Unable to read cv/cv.yml" }}
+{{ end }}
+{{ $home := .Site.Data.homepage }}
+{{ $github := "" }}
+{{ $affiliation := "" }}
+{{ $location := "" }}
+{{ with index $cv.personal.profiles 0 }}
+  {{ $github = .url }}
+{{ end }}
+{{ with index $cv.education 0 }}
+  {{ $affiliation = .institution }}
+{{ end }}
+{{ with $cv.personal.location }}
+  {{ $parts := slice }}
+  {{ with .city }}
+    {{ $parts = $parts | append . }}
+  {{ end }}
+  {{ with .country }}
+    {{ $parts = $parts | append . }}
+  {{ end }}
+  {{ $location = delimit $parts ", " }}
+{{ end }}
+
+<section class="academic-hero">
+  <div class="academic-hero__content">
+    <p class="academic-hero__eyebrow">{{ $affiliation }}</p>
+    <h1>{{ $cv.personal.name }}</h1>
+    <p class="academic-hero__title">{{ index $cv.personal.titles 0 }}</p>
+    <p class="academic-hero__summary">{{ $cv.homepage.heroSummary }}</p>
+    <ul class="academic-hero__keywords">
+      {{ range $cv.homepage.keywords }}
+        <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+    <div class="academic-hero__actions">
+      <a class="academic-button academic-button--primary" href="/cv/cv.pdf">Download CV</a>
+      {{ with $github }}
+        <a class="academic-button" href="{{ . }}" rel="noopener noreferrer" target="_blank">GitHub</a>
+      {{ end }}
+      <a class="academic-button" href="mailto:{{ $cv.personal.email }}">Email</a>
+    </div>
+  </div>
+  <div class="academic-hero__media">
+    <img src="/images/profile.jpg" alt="Portrait of {{ $cv.personal.name }}">
+  </div>
+</section>
+
+<section class="academic-section" id="about">
+  <h2>About</h2>
+  <p>{{ $home.about }}</p>
+</section>
+
+<section class="academic-section" id="research">
+  <h2>Research Interests</h2>
+  <ul class="academic-tag-list">
+    {{ range $cv.researchInterests }}
+      <li>{{ . }}</li>
+    {{ end }}
+  </ul>
+</section>
+
+<section class="academic-section" id="publications">
+  <h2>Publications</h2>
+  <ol class="academic-publications">
+    {{ range sort $cv.publicationEntries "sortKey" "desc" }}
+      <li class="academic-publications__item">
+        <div class="academic-publications__authors">{{ .authors | markdownify }}</div>
+        <div class="academic-publications__title">
+          <a href="{{ .url }}" rel="noopener noreferrer" target="_blank">{{ .title }}</a>
+        </div>
+        <div class="academic-publications__venue">{{ .venue | markdownify }}</div>
+      </li>
+    {{ end }}
+  </ol>
+</section>
+
+<section class="academic-section" id="software-talks">
+  <h2>Software &amp; Talks</h2>
+  <div class="academic-list">
+    {{ range $cv.projects }}
+      <article class="academic-list__item">
+        <h3><a href="{{ .url }}" rel="noopener noreferrer" target="_blank">{{ .name }}</a></h3>
+        <p class="academic-list__meta">{{ .affiliation }}</p>
+        {{ with .highlights }}
+          <p>{{ index . 0 }}</p>
+        {{ end }}
+      </article>
+    {{ end }}
+    <article class="academic-list__item">
+      <h3><a href="https://github.com/QuantumSavory/QuantumClifford.jl" rel="noopener noreferrer" target="_blank">QuantumClifford.jl</a></h3>
+      <p class="academic-list__meta">Contributor</p>
+      <p>Open-source contributions to a Julia toolkit for quantum circuit and stabilizer simulation.</p>
+    </article>
+  </div>
+</section>
+
+<section class="academic-section" id="experience">
+  <h2>Experience</h2>
+  <div class="academic-list">
+    {{ range $job := $cv.work }}
+      {{ range $position := $job.positions }}
+        {{ $start := time.AsTime $position.startDate }}
+        {{ $endLabel := "" }}
+        {{ if eq $position.endDate "present" }}
+          {{ $endLabel = "Present" }}
+        {{ else }}
+          {{ $endLabel = time.Format "Jan 2006" (time.AsTime $position.endDate) }}
+        {{ end }}
+        <article class="academic-list__item">
+          <h3>{{ $position.position }}</h3>
+          <p class="academic-list__meta">{{ $job.organization }} · {{ $job.location }}</p>
+          <p class="academic-list__dates">{{ time.Format "Jan 2006" $start }} - {{ $endLabel }}</p>
+          {{ with $position.highlights }}
+            <p>{{ index . 0 }}</p>
+          {{ end }}
+        </article>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+
+<section class="academic-section academic-section--contact" id="contact">
+  <h2>Contact</h2>
+  <ul class="academic-contact">
+    <li>
+      <span>Email</span>
+      <a href="mailto:{{ $cv.personal.email }}">{{ $cv.personal.email }}</a>
+    </li>
+    {{ with $github }}
+      <li>
+        <span>GitHub</span>
+        <a href="{{ . }}" rel="noopener noreferrer" target="_blank">{{ . }}</a>
+      </li>
+    {{ end }}
+    <li>
+      <span>CV</span>
+      <a href="/cv/cv.pdf">Download PDF</a>
+    </li>
+    <li>
+      <span>Location</span>
+      <span>{{ $location }}</span>
+    </li>
+  </ul>
+</section>

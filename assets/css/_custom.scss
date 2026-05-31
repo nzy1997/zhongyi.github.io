@@ -1,0 +1,195 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.academic-home-page {
+  padding-bottom: 4rem;
+
+  .content {
+    display: block;
+  }
+}
+
+.academic-hero,
+.academic-section {
+  scroll-margin-top: 5rem;
+}
+
+.academic-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.9fr);
+  gap: 2.5rem;
+  align-items: center;
+  padding: 2rem 0 2.5rem;
+}
+
+.academic-hero__eyebrow,
+.academic-list__meta,
+.academic-list__dates,
+.academic-publications__venue,
+.academic-contact span:first-child {
+  color: $global-font-secondary-color;
+
+  [theme=dark] & {
+    color: $global-font-secondary-color-dark;
+  }
+}
+
+.academic-hero h1 {
+  margin: 0 0 0.75rem;
+  font-size: 2.8rem;
+  line-height: 1.08;
+}
+
+.academic-hero__title {
+  margin: 0 0 0.85rem;
+  font-size: 1.15rem;
+}
+
+.academic-hero__summary {
+  margin: 0 0 1rem;
+  max-width: 42rem;
+}
+
+.academic-hero__keywords,
+.academic-tag-list,
+.academic-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.academic-hero__keywords,
+.academic-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.academic-hero__keywords li,
+.academic-tag-list li {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid $global-border-color;
+  border-radius: 999px;
+  line-height: 1.4;
+
+  [theme=dark] & {
+    border-color: $global-border-color-dark;
+  }
+}
+
+.academic-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.academic-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  border: 1px solid $global-border-color;
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  [theme=dark] & {
+    border-color: $global-border-color-dark;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.academic-button--primary {
+  font-weight: 600;
+}
+
+.academic-hero__media {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.academic-hero__media img {
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.academic-section {
+  padding-top: 2.5rem;
+}
+
+.academic-section h2 {
+  margin-bottom: 1rem;
+}
+
+.academic-publications {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.academic-publications__item + .academic-publications__item,
+.academic-list__item + .academic-list__item {
+  margin-top: 1.25rem;
+}
+
+.academic-publications__authors,
+.academic-publications__title,
+.academic-publications__venue,
+.academic-list__item h3,
+.academic-list__item p {
+  margin: 0;
+}
+
+.academic-publications__authors p,
+.academic-publications__venue p {
+  margin: 0;
+}
+
+.academic-publications__title,
+.academic-list__item p:last-child {
+  margin-top: 0.3rem;
+}
+
+.academic-publications__venue,
+.academic-list__meta,
+.academic-list__dates {
+  margin-top: 0.3rem;
+}
+
+.academic-contact li {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.45rem 0;
+}
+
+@media (max-width: 900px) {
+  .academic-hero {
+    grid-template-columns: 1fr;
+    padding-top: 1rem;
+  }
+
+  .academic-hero__media {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .academic-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .academic-contact li {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
