@@ -145,6 +145,11 @@ publicationEntries:
     title: AI-Enabled Decoding of Qubit Loss for Quantum Error-Correcting Codes
     url: https://arxiv.org/abs/2604.14269
     venue: 'arXiv:2604.14269 [quant-ph], 2026.'
+  - sortKey: 2025-05
+    authors: 'Tangyou Huang, Jing-Jun Zhu, and *Zhongyi Ni*'
+    title: Optimal Control by Variational Quantum Algorithms
+    url: https://arxiv.org/abs/2505.23373
+    venue: 'arXiv:2505.23373 [quant-ph], 2025.'
   - sortKey: 2024-09
     authors: '*Zhongyi Ni*, Yu-Sheng Zhao, and Jin-Guo Liu'
     title: Universal Quantum Computing with a Single Arbitrary Gate
@@ -155,8 +160,3 @@ publicationEntries:
     title: Quantum Force Sensing by Digital Twinning of Atomic Bose-Einstein Condensates
     url: https://doi.org/10.1038/s42005-024-01662-1
     venue: '*Communications Physics* 7(1), 2024. DOI: 10.1038/s42005-024-01662-1.'
-  - sortKey: 2025-05
-    authors: 'Tangyou Huang, Jing-Jun Zhu, and *Zhongyi Ni*'
-    title: Optimal Control by Variational Quantum Algorithms
-    url: https://arxiv.org/abs/2505.23373
-    venue: 'arXiv:2505.23373 [quant-ph], 2025.'
