@@ -1,0 +1,162 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jskherman/imprecv/main/cv.typ.schema.json
+
+personal:
+  name: Zhongyi Ni
+  email: zni573@connect.hkust-gz.edu.cn
+  phone: "+86 131-2271-2162"
+  url:
+  titles:
+    - PhD Student in Physics
+  location:
+    city: Guangzhou
+    region:
+    country: China
+  profiles:
+    - network: GitHub
+      username: nzy1997
+      url: https://github.com/nzy1997
+
+homepage:
+  heroSummary: Research in quantum error correction, tensor-network methods, and quantum computing.
+  keywords:
+    - Quantum error correction
+    - Tensor networks
+    - Variational quantum algorithms
+    - Quantum control
+
+researchInterests:
+  - Quantum error correction
+  - Tensor networks
+  - Variational quantum algorithms
+  - Quantum control
+
+education:
+  - institution: The Hong Kong University of Science and Technology (Guangzhou)
+    url: https://www.hkust-gz.edu.cn/
+    area: Physics
+    studyType: PhD
+    startDate: 2023-09-01
+    endDate: present
+    location: Guangzhou, China
+    honors:
+    courses:
+    highlights:
+      - "Advisor: Prof. Jin-Guo Liu"
+  - institution: Fudan University
+    url: https://www.fudan.edu.cn/
+    area: Electronic Information Science and Technology
+    studyType: Bachelor of Science
+    startDate: 2020-09-01
+    endDate: 2022-06-30
+    location: Shanghai, China
+    honors:
+    courses:
+    highlights:
+  - institution: Fudan University
+    url: https://www.fudan.edu.cn/
+    area: Mathematics and Applied Mathematics
+    studyType: Bachelor of Science
+    startDate: 2016-09-01
+    endDate: 2020-06-30
+    location: Shanghai, China
+    honors:
+    courses:
+    highlights:
+
+work:
+  - organization: Institute for Advanced Study, Tsinghua University
+    url: https://www.ias.tsinghua.edu.cn/
+    location: Beijing, China
+    positions:
+      - position: Visiting Student
+        startDate: 2025-07-01
+        endDate: 2026-07-31
+        highlights:
+          - Visiting student hosted by Prof. Yingfei Gu.
+          - Conducting research in quantum many-body methods and quantum information.
+  - organization: The Hong Kong University of Science and Technology (Guangzhou)
+    url: https://www.hkust-gz.edu.cn/
+    location: Guangzhou, China
+    positions:
+      - position: PhD Student
+        startDate: 2023-09-01
+        endDate: present
+        highlights:
+          - Research in quantum error correction, tensor-network methods, and quantum computing.
+          - Supervised by Prof. Jin-Guo Liu.
+  - organization: Shanghai Qi Zhi Institute
+    url:
+    location: Shanghai, China
+    positions:
+      - position: Research Assistant
+        startDate: 2022-07-01
+        endDate: 2023-06-30
+        highlights:
+          - Worked on quantum computing and quantum control problems.
+          - Supervised by Prof. Xiaopeng Li.
+
+projects:
+  - name: TensorQEC.jl
+    url: https://github.com/nzy1997/TensorQEC.jl
+    affiliation: Research Software
+    startDate: 2024-01-01
+    endDate: present
+    highlights:
+      - Julia package for tensor-network methods in quantum error correction.
+  - name: Tensor Network for Quantum Error Correction
+    url: https://www.youtube.com/watch?v=v0RPD4eSzVE
+    affiliation: JuliaCon talk
+    startDate: 2025-07-01
+    endDate: 2025-07-01
+    highlights:
+      - Conference talk centered on TensorQEC.jl and tensor-network approaches to quantum error correction.
+
+awards:
+  - title: Silver Medal, China Mathematics Olympiad
+    date: 2015-11-01
+    issuer: China Mathematics Olympiad
+    url:
+    location: China
+    highlights:
+  - title: Student Scholarship
+    date: 2018-11-01
+    issuer: Fudan University
+    url:
+    location: Shanghai, China
+    highlights:
+      - Also awarded in 2017.
+  - title: Academic Scholarship
+    date: 2018-11-01
+    issuer: Fudan University
+    url:
+    location: Shanghai, China
+    highlights:
+      - Also awarded in 2017.
+  - title: Excellent Prize, Shenzhen Cup Mathematical Modeling Competition
+    date: 2018-11-01
+    issuer: Shenzhen Cup Mathematical Modeling Competition
+    url:
+    location: China
+    highlights:
+
+publicationEntries:
+  - sortKey: 2026-04
+    authors: 'Yuqing Wang, Xiaotian Nie, Jiale Dai, *Zhongyi Ni*, Tao Zhang, Hui Zhai, and Linghui Chen'
+    title: AI-Enabled Decoding of Qubit Loss for Quantum Error-Correcting Codes
+    url: https://arxiv.org/abs/2604.14269
+    venue: 'arXiv:2604.14269 [quant-ph], 2026.'
+  - sortKey: 2024-09
+    authors: '*Zhongyi Ni*, Yu-Sheng Zhao, and Jin-Guo Liu'
+    title: Universal Quantum Computing with a Single Arbitrary Gate
+    url: https://arxiv.org/abs/2409.20025
+    venue: 'arXiv:2409.20025 [quant-ph], 2024.'
+  - sortKey: 2024-06
+    authors: 'Tangyou Huang, Zhongcheng Yu, *Zhongyi Ni*, Xiaoji Zhou, and Xiaopeng Li'
+    title: Quantum Force Sensing by Digital Twinning of Atomic Bose-Einstein Condensates
+    url: https://doi.org/10.1038/s42005-024-01662-1
+    venue: '*Communications Physics* 7(1), 2024. DOI: 10.1038/s42005-024-01662-1.'
+  - sortKey: 2025-05
+    authors: 'Tangyou Huang, Jing-Jun Zhu, and *Zhongyi Ni*'
+    title: Optimal Control by Variational Quantum Algorithms
+    url: https://arxiv.org/abs/2505.23373
+    venue: 'arXiv:2505.23373 [quant-ph], 2025.'
