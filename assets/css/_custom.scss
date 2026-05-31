@@ -52,22 +52,19 @@ html {
 }
 
 .academic-hero__keywords,
-.academic-tag-list,
 .academic-contact {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.academic-hero__keywords,
-.academic-tag-list {
+.academic-hero__keywords {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
 }
 
-.academic-hero__keywords li,
-.academic-tag-list li {
+.academic-hero__keywords li {
   padding: 0.35rem 0.75rem;
   border: 1px solid $global-border-color;
   border-radius: 999px;
@@ -134,6 +131,15 @@ html {
 .academic-publications {
   margin: 0;
   padding-left: 1.4rem;
+}
+
+.academic-list {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.academic-list--numbered {
+  list-style: decimal;
 }
 
 .academic-publications__item + .academic-publications__item,

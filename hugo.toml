@@ -92,35 +92,25 @@ enableEmoji = true
 
 [menu]
   [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "#about"
-    weight = 1
-  [[menu.main]]
-    identifier = "research"
-    name = "Research"
-    url = "#research"
-    weight = 2
-  [[menu.main]]
     identifier = "publications"
     name = "Publications"
     url = "#publications"
-    weight = 3
+    weight = 1
   [[menu.main]]
     identifier = "software-talks"
     name = "Software & Talks"
     url = "#software-talks"
-    weight = 4
+    weight = 2
   [[menu.main]]
     identifier = "experience"
     name = "Experience"
     url = "#experience"
-    weight = 5
+    weight = 3
   [[menu.main]]
     identifier = "contact"
     name = "Contact"
     url = "#contact"
-    weight = 6
+    weight = 4
 
 [outputs]
   home = ["HTML", "JSON"]

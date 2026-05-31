@@ -49,20 +49,6 @@
   </div>
 </section>
 
-<section class="academic-section" id="about">
-  <h2>About</h2>
-  <p>{{ $home.about }}</p>
-</section>
-
-<section class="academic-section" id="research">
-  <h2>Research Interests</h2>
-  <ul class="academic-tag-list">
-    {{ range $cv.researchInterests }}
-      <li>{{ . }}</li>
-    {{ end }}
-  </ul>
-</section>
-
 <section class="academic-section" id="publications">
   <h2>Publications</h2>
   <ol class="academic-publications">
@@ -80,27 +66,27 @@
 
 <section class="academic-section" id="software-talks">
   <h2>Software &amp; Talks</h2>
-  <div class="academic-list">
+  <ol class="academic-list academic-list--numbered">
     {{ range $cv.projects }}
-      <article class="academic-list__item">
+      <li class="academic-list__item">
         <h3><a href="{{ .url }}" rel="noopener noreferrer" target="_blank">{{ .name }}</a></h3>
         <p class="academic-list__meta">{{ .affiliation }}</p>
         {{ with .highlights }}
           <p>{{ index . 0 }}</p>
         {{ end }}
-      </article>
+      </li>
     {{ end }}
-    <article class="academic-list__item">
+    <li class="academic-list__item">
       <h3><a href="https://github.com/QuantumSavory/QuantumClifford.jl" rel="noopener noreferrer" target="_blank">QuantumClifford.jl</a></h3>
       <p class="academic-list__meta">Contributor</p>
       <p>Open-source contributions to a Julia toolkit for quantum circuit and stabilizer simulation.</p>
-    </article>
-  </div>
+    </li>
+  </ol>
 </section>
 
 <section class="academic-section" id="experience">
   <h2>Experience</h2>
-  <div class="academic-list">
+  <ol class="academic-list academic-list--numbered">
     {{ range $job := $cv.work }}
       {{ range $position := $job.positions }}
         {{ $start := time.AsTime $position.startDate }}
@@ -110,17 +96,17 @@
         {{ else }}
           {{ $endLabel = time.Format "Jan 2006" (time.AsTime $position.endDate) }}
         {{ end }}
-        <article class="academic-list__item">
+        <li class="academic-list__item">
           <h3>{{ $position.position }}</h3>
           <p class="academic-list__meta">{{ $job.organization }} · {{ $job.location }}</p>
           <p class="academic-list__dates">{{ time.Format "Jan 2006" $start }} - {{ $endLabel }}</p>
           {{ with $position.highlights }}
             <p>{{ index . 0 }}</p>
           {{ end }}
-        </article>
+        </li>
       {{ end }}
     {{ end }}
-  </div>
+  </ol>
 </section>
 
 <section class="academic-section academic-section--contact" id="contact">
