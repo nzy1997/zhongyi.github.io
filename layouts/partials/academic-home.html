@@ -32,11 +32,13 @@
     <h1>{{ $cv.personal.name }}</h1>
     <p class="academic-hero__title">{{ index $cv.personal.titles 0 }}</p>
     <p class="academic-hero__summary">{{ $cv.homepage.heroSummary }}</p>
-    <ul class="academic-hero__keywords">
-      {{ range $cv.homepage.keywords }}
-        <li>{{ . }}</li>
-      {{ end }}
-    </ul>
+    {{ with $cv.homepage.keywords }}
+      <ul class="academic-hero__keywords">
+        {{ range . }}
+          <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    {{ end }}
     <div class="academic-hero__actions">
       <a class="academic-button academic-button--primary" href="/cv/cv.pdf">Download CV</a>
       {{ with $github }}
@@ -66,7 +68,7 @@
 </section>
 
 <section class="academic-section" id="software">
-  <h2>Software</h2>
+  <h2>Open Source Contributions</h2>
   <ol class="academic-list academic-list--numbered">
     {{ range $softwareProjects }}
       <li class="academic-list__item">

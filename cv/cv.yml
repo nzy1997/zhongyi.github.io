@@ -2,6 +2,7 @@
 
 personal:
   name: Zhongyi Ni
+  nameNative: 倪中一
   email: zni573@connect.hkust-gz.edu.cn
   phone: "+86 131-2271-2162"
   url:
@@ -17,26 +18,18 @@ personal:
       url: https://github.com/nzy1997
 
 homepage:
-  heroSummary: Research in quantum error correction, tensor-network methods, and numerical methods for quantum computing.
-  keywords:
-    - Quantum error correction
-    - Tensor networks
-    - Numerical methods
-  softwareExtras:
-    - name: QuantumClifford.jl
-      url: https://github.com/QuantumSavory/QuantumClifford.jl
-      meta: Contributor
-      description: Open-source contributions to a Julia toolkit for quantum circuit and stabilizer simulation.
+  heroSummary: Research in quantum error correction, with a focus on open-source computational tools for quantum computing.
+  keywords: []
+  softwareExtras: []
 
 researchInterests:
   - Quantum error correction
-  - Tensor networks
-  - Numerical methods
+  - Open-source computational tools for quantum computing
 
 education:
   - institution: The Hong Kong University of Science and Technology (Guangzhou)
     url: https://www.hkust-gz.edu.cn/
-    area: Physics
+    area: Advanced Materials
     studyType: PhD
     startDate: 2023-09-01
     endDate: present
@@ -75,8 +68,7 @@ work:
         startDate: 2025-07-01
         endDate: 2026-07-31
         highlights:
-          - Visiting student hosted by Prof. Yingfei Gu.
-          - Conducting research in quantum many-body methods and quantum information.
+          - Hosted by Prof. Yingfei Gu.
   - organization: The Hong Kong University of Science and Technology (Guangzhou)
     url: https://www.hkust-gz.edu.cn/
     location: Guangzhou, China
@@ -85,7 +77,6 @@ work:
         startDate: 2023-09-01
         endDate: present
         highlights:
-          - Research in quantum error correction, tensor-network methods, and quantum computing.
           - Supervised by Prof. Jin-Guo Liu.
   - organization: Shanghai Qi Zhi Institute
     url:
@@ -95,7 +86,6 @@ work:
         startDate: 2022-07-01
         endDate: 2023-06-30
         highlights:
-          - Worked on quantum computing and quantum control problems.
           - Supervised by Prof. Xiaopeng Li.
 
 projects:
@@ -108,6 +98,42 @@ projects:
     endDate: present
     highlights:
       - Julia package for tensor-network methods in quantum error correction.
+  - name: QuantumClifford.jl
+    url: https://github.com/QuantumSavory/QuantumClifford.jl
+    affiliation: Research Software
+    homepageSection: software
+    homepageMeta: Contributor
+    startDate:
+    endDate:
+    highlights:
+      - Open-source contributions to a Julia toolkit for quantum circuit and stabilizer simulation.
+  - name: qec-thrust
+    url: https://github.com/nzy1997/qec-thrust
+    affiliation: Research Software
+    homepageSection: software
+    homepageMeta: Maintainer
+    startDate: 2025-04-01
+    endDate: present
+    highlights:
+      - Typst package for visualizing quantum error correction codes.
+  - name: ILPQEC
+    url: https://github.com/nzy1997/ILPQEC
+    affiliation: Research Software
+    homepageSection: software
+    homepageMeta: Maintainer
+    startDate: 2026-01-01
+    endDate: present
+    highlights:
+      - Python package for maximum-likelihood quantum error correction decoding using integer linear programming.
+  - name: rstim
+    url: https://github.com/nzy1997/rstim
+    affiliation: Research Software
+    homepageSection: software
+    homepageMeta: Maintainer
+    startDate: 2026-02-01
+    endDate: present
+    highlights:
+      - Rust implementation of Stim-like stabilizer circuit simulation with atom-loss-aware workflows.
   - name: Tensor Network for Quantum Error Correction
     url: https://www.youtube.com/watch?v=v0RPD4eSzVE
     affiliation: JuliaCon talk
@@ -125,20 +151,6 @@ awards:
     url:
     location: China
     highlights:
-  - title: Student Scholarship
-    date: 2018-11-01
-    issuer: Fudan University
-    url:
-    location: Shanghai, China
-    highlights:
-      - Also awarded in 2017.
-  - title: Academic Scholarship
-    date: 2018-11-01
-    issuer: Fudan University
-    url:
-    location: Shanghai, China
-    highlights:
-      - Also awarded in 2017.
   - title: Excellent Prize, Shenzhen Cup Mathematical Modeling Competition
     date: 2018-11-01
     issuer: Shenzhen Cup Mathematical Modeling Competition

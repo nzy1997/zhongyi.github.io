@@ -98,7 +98,7 @@ enableEmoji = true
     weight = 1
   [[menu.main]]
     identifier = "software"
-    name = "Software"
+    name = "Open Source Contributions"
     url = "#software"
     weight = 2
   [[menu.main]]
