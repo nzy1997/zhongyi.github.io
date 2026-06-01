@@ -4,9 +4,9 @@ Date: 2026-06-01
 
 ## Goal
 
-Publish the existing Hugo-based personal website in this repository to the default GitHub Pages user-site URL:
+Publish the existing Hugo-based personal website in this repository to the GitHub Pages user-site URL:
 
-`https://zhongyi.github.io/`
+`https://nzy1997.github.io/`
 
 The deployment should be automatic so that future pushes to the default branch trigger a rebuild and publish flow without any manual upload step.
 
@@ -15,7 +15,7 @@ The deployment should be automatic so that future pushes to the default branch t
 Included:
 
 1. Deploy the current Hugo site to GitHub Pages
-2. Use the default user-site domain `https://zhongyi.github.io/`
+2. Use the GitHub Pages user-site domain `https://nzy1997.github.io/`
 3. Configure automatic deployment from the repository's default branch
 4. Preserve the existing Hugo + LoveIt site structure
 5. Verify that the generated site includes homepage assets and the mounted `cv/` static output
@@ -32,8 +32,8 @@ Excluded:
 
 The repository already matches the core requirements for a GitHub Pages user site:
 
-- repository name is `zhongyi.github.io`
-- Hugo configuration sets `baseURL = "https://zhongyi.github.io/"`
+- repository name is `nzy1997.github.io`
+- Hugo configuration sets `baseURL = "https://nzy1997.github.io/"`
 - the site is built with Hugo and the `LoveIt` theme
 - the theme is stored as a git submodule under `themes/LoveIt`
 - `cv/` is mounted into `static/cv`, so generated site output must preserve `/cv/*` URLs
@@ -133,7 +133,7 @@ The `LoveIt` theme lives in `themes/LoveIt`, so checkout must include submodules
 
 ### Base URL
 
-`hugo.toml` already points to `https://zhongyi.github.io/`, which is correct for a GitHub Pages user site and should remain unchanged.
+`hugo.toml` points to `https://nzy1997.github.io/`, which is correct for the current GitHub Pages user site and should remain unchanged.
 
 ### CV Static Mount
 
@@ -147,9 +147,9 @@ The deployment work is complete only if the following conditions are satisfied:
 2. The GitHub Actions workflow file is syntactically valid
 3. The workflow checks out submodules correctly
 4. The repository can be configured to deploy from `GitHub Actions`
-5. After deployment, `https://zhongyi.github.io/` loads successfully
+5. After deployment, `https://nzy1997.github.io/` loads successfully
 6. The homepage static assets load without broken paths
-7. `https://zhongyi.github.io/cv/cv.pdf` is reachable
+7. `https://nzy1997.github.io/cv/cv.pdf` is reachable
 
 ## Risks And Mitigations
 

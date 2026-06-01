@@ -1,4 +1,4 @@
-# zhongyi.github.io
+# nzy1997.github.io
 
 Personal academic website built with Hugo and the LoveIt theme.
 
