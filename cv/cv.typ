@@ -52,14 +52,9 @@
       },
       box(link("mailto:" + info.personal.email)),
       if info.personal.url != none {
-        box(link(info.personal.url)[#info.personal.url.split("//").at(1)])
+        box(link(info.personal.url)[#info.personal.url])
       }
     ).filter(it => it != none)
-    #if info.personal.profiles.len() > 0 {
-      for profile in info.personal.profiles {
-        profiles.push(box(link(profile.url)[#profile.url.split("//").at(1)]))
-      }
-    }
     #set text(font: uservars.bodyfont, weight: "medium", size: uservars.fontsize * 1)
     #pad(x: 0em)[
       #profiles.join([#sym.space.en #sym.diamond.filled #sym.space.en])

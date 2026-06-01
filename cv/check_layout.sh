@@ -71,7 +71,12 @@ if ! rg -q 'PhD Student in Advanced Materials' "$HEAD_TXT"; then
   exit 1
 fi
 
-if ! rg -q '倪中一.*zni573@connect\.hkust-gz\.edu\.cn.*github\.com/nzy1997|zni573@connect\.hkust-gz\.edu\.cn.*倪中一.*github\.com/nzy1997|zni573@connect\.hkust-gz\.edu\.cn.*github\.com/nzy1997.*倪中一' "$HEAD_TXT"; then
-  echo "Chinese name, email, and GitHub are not on the same heading line." >&2
+if rg -q 'github\.com/nzy1997' "$HEAD_TXT"; then
+  echo "Found GitHub in rendered CV heading." >&2
+  exit 1
+fi
+
+if ! rg -q '倪中一.*zni573@connect\.hkust-gz\.edu\.cn.*https://nzy1997\.github\.io/|zni573@connect\.hkust-gz\.edu\.cn.*倪中一.*https://nzy1997\.github\.io/|zni573@connect\.hkust-gz\.edu\.cn.*https://nzy1997\.github\.io/.*倪中一' "$HEAD_TXT"; then
+  echo "Chinese name, email, and homepage are not on the same heading line." >&2
   exit 1
 fi
