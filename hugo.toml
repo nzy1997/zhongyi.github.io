@@ -7,6 +7,10 @@ hasCJKLanguage = false
 enableRobotsTXT = true
 enableEmoji = true
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [module]
   [[module.mounts]]
     source = "static"
